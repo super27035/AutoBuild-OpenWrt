@@ -65,6 +65,14 @@ jobs:
         cd openwrt
         sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
         
+    - name: OpenClash
+      run: |
+        cd package
+        mkdir openwrt-packages
+        cd openwrt-packages
+        git clone https://github.com/vernesong/OpenClash.git      
+        
+        
     - name: Update & Install feeds
       working-directory: ./openwrt
       run: |
