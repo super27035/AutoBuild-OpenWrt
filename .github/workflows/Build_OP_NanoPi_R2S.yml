@@ -70,7 +70,8 @@ jobs:
         cd package
         mkdir openwrt-packages
         cd openwrt-packages
-        git clone https://github.com/vernesong/OpenClash.git      
+        git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git
+     
         
         
     - name: Update & Install feeds
