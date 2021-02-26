@@ -7,9 +7,9 @@
 
 name: R2S OpenClash
 
-on: 
-  release:
-    types: [published]
+#on: 
+  #release:
+    #types: [published]
 
   #push:
     #branches: 
