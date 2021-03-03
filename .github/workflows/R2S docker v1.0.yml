@@ -19,7 +19,7 @@ on:
   #  - cron: 0 8 * * 5
   
   #watch:
-  #  types: [started]
+    #types: [started]
 
 jobs:
   build:
@@ -102,9 +102,9 @@ jobs:
         
         
 
-    - name: Configuration Customization - Build_NanoPi_R2S
+    - name: Configuration Customization - R2S docker v1.0.config
       env:
-        CONFIG_FILE: 'NanoPi_R2S.config'
+        CONFIG_FILE: 'R2S docker v1.0.config'
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x ./customize.sh && ./customize.sh
