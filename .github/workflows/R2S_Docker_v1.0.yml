@@ -102,9 +102,9 @@ jobs:
         
         
 
-    - name: Configuration Customization - R2S docker v1.0.config
+    - name: Configuration Customization - R2S_Docker_v1.0
       env:
-        CONFIG_FILE: 'R2S docker v1.0.config'
+        CONFIG_FILE: 'R2S_Docker_v1.0.config'
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x ./customize.sh && ./customize.sh
