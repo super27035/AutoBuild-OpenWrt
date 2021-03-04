@@ -5,7 +5,7 @@
 # Youtube Channel: https://goo.gl/fvkdwm 
 #=================================================
 
-name: R2S Super custome Firmware 
+name: R2S Super Docker Firmware 
 
 on: 
   release:
