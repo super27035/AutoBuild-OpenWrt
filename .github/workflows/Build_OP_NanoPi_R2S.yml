@@ -5,7 +5,7 @@
 # Youtube Channel: https://goo.gl/fvkdwm 
 #=================================================
 
-name: R2S Super Frpc Firmware 
+name: R2S Super Firmware 
 
 on: 
   release:
