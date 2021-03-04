@@ -16,4 +16,4 @@ sed -i 's/OpenWrt/SUPERrouter/g' openwrt/package/base-files/files/bin/config_gen
 #sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow  #original settings from the shadow file
 #root:$1$S2TRFyMU$E8fE0RRKR0jNadn3YLrSQ0:18690:0:99999:7::: #superlyn
 #root:$1$UF4foXSz$b8bNHSHxA3Ql99IPeTFNi1:18690:0:99999:7::: #super
-sed -i 's/$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/$1$S2TRFyMU$E8fE0RRKR0jNadn3YLrSQ0:18690:0:99999:7:::/g' openwrt/package/base-files/files/etc/shadow
+sed -i 's/$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:/$1$S2TRFyMU$E8fE0RRKR0jNadn3YLrSQ0:1869/g' openwrt/package/lean/default-settings/files/zzz-default-settings
