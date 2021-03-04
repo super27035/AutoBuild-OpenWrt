@@ -12,5 +12,5 @@
 sed -i 's/192.168.1.1/192.168.5.1/g' openwrt/package/base-files/files/bin/config_generate
 #2. Modify default hosename
 sed -i 's/OpenWrt/SUPERrouter/g' openwrt/package/base-files/files/bin/config_generate
-#3. Modify default login password
+#3. Modify default login password,needs to disable this funtion @ package/lean/default-settings/files/zzz-default-settings
 sed -i 's/root::0:0:99999:7:::/root:$1$BDwbvZz1$gVXURXUouSjDa5pg2Jee./:18689:0:99999:7:::/g' /etc/shadow
