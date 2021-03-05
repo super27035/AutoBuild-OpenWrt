@@ -11,9 +11,9 @@ on:
   release:
     types: [published]
 
-  push:
-    branches: 
-      - super
+  #push:
+    #branches: 
+      #- super
 
   #schedule:
   #  - cron: 0 8 * * 5
@@ -102,9 +102,9 @@ jobs:
         
         
 
-    - name: Configuration Customization - R2S_Docker_v1.0
+    - name: Configuration Customization - R2S_Frpc_v1.0
       env:
-        CONFIG_FILE: 'R2S_Docker_v1.0.config'
+        CONFIG_FILE: 'R2S_Frpc_v1.0.config'
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x ./super_v1.0.sh && ./super_v1.0.sh
