@@ -11,9 +11,9 @@ on:
   release:
     types: [published]
 
-  #push:
-    #branches: 
-      #- master
+  push:
+    branches: 
+      - super
 
   #schedule:
   #  - cron: 0 8 * * 5
@@ -77,10 +77,10 @@ jobs:
     #    git clone https://github.com/xiaorouji/openwrt-passwall.git package/lienol
     #    git clone "your_github_link" package/"your_folder_name"      
  
-    - name: Delete Old Argon
-      working-directory: ./openwrt/package
-      run: |
-        rm -rf lean/luci-theme-argon
+    #- name: Delete Old Argon
+    #  working-directory: ./openwrt/package
+    #  run: |
+    #    rm -rf lean/luci-theme-argon
         
     #- name: Delete Old Argon
     #  run: |
