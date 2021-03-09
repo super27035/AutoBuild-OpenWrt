@@ -5,7 +5,7 @@
 # Youtube Channel: https://goo.gl/fvkdwm 
 #=================================================
 
-name: R2S Super Frp Firmware 
+name: R2S Super eSir Firmware Final
 
 on: 
   release:
@@ -95,11 +95,9 @@ jobs:
         git clone https://github.com/xiaorouji/openwrt-passwall.git package/lienol
         git clone https://github.com/super27035/OpenClash.git package/OpenClash
         git clone -b 18.06 https://github.com/super27035/luci-theme-argon.git package/luci-theme-argon
-        git clone -b master https://github.com/super27035/luci-app-argon-config.git package/luci-app-argon-config
         git clone https://github.com/super27035/lua-maxminddb.git package/lua-maxminddb
         git clone https://github.com/super27035/luci-app-vssr.git package/luci-app-vssr
-        git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman
-        
+
         
 
     - name: Configuration Customization - R2S_Frpc_v1.0
