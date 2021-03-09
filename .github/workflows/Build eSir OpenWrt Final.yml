@@ -97,10 +97,10 @@ jobs:
 
     - name: Configuration Customization - R2S_Frpc_v1.0
       env:
-        CONFIG_FILE: 'R2S_Frpc_v1.0.config'
+        CONFIG_FILE: 'R2S_eSir_Final.config'
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-        chmod +x ./super_v1.0.sh && ./super_v1.0.sh
+        chmod +x ./R2S_eSir_Final.sh && ./R2S_eSir_Final.sh
         cd openwrt && make defconfig
         
     - name: Download package
