@@ -5,7 +5,7 @@
 # Youtube Channel: https://goo.gl/fvkdwm 
 #=================================================
 
-name: Build Super eSir OpenWrt Final
+name: Build eSir OpenWrt Final
 
 on:
   repository_dispatch:
