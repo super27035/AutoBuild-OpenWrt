@@ -93,9 +93,7 @@ jobs:
         git clone https://github.com/super27035/lua-maxminddb.git package/lua-maxminddb
         git clone https://github.com/super27035/luci-app-vssr.git package/luci-app-vssr
 
-        
-
-    - name: Configuration Customization - R2S_Frpc_v1.0
+    - name: Configuration Customization - R2S_eSir_Final.config
       env:
         CONFIG_FILE: 'R2S_eSir_Final.config'
       run: |
