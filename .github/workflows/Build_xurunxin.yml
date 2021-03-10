@@ -79,7 +79,7 @@ jobs:
       run: |
        chmod +x ./external_feeds.sh && ./external_feeds.sh
 
-    - name: Configuration Customization - Build_NanoPi_R2S
+    - name: Configuration Customization - R2S_xurunxin.config
       env:
         CONFIG_FILE: 'R2S_xurunxin.config'
       run: |
