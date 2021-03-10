@@ -5,7 +5,7 @@
 # Youtube Channel: https://goo.gl/fvkdwm 
 #=================================================
 
-name: Build_NanoPi_R2S
+name: Build_xurunxin_R2S
 
 on: 
   workflow_dispatch:
@@ -81,7 +81,7 @@ jobs:
 
     - name: Configuration Customization - Build_NanoPi_R2S
       env:
-        CONFIG_FILE: 'NanoPi_R2S.config'
+        CONFIG_FILE: 'R2S_xurunxin.config'
       run: |
         rm -f openwrt/.config
         touch openwrt/.config
