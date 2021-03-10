@@ -15,3 +15,6 @@ sed -i 's/root::0:0:99999:7:::/root:$1$S2TRFyMU$E8fE0RRKR0jNadn3YLrSQ0:18690:0:9
 
 #3. Modify default hosename
 sed -i 's/OpenWrt/SUPERouter/g' openwrt/package/base-files/files/bin/config_generate
+
+#4. Change the default language back to auto
+sed -i 's/zh_cn/auto/g' openwrt/package/lean/default-settings/files/zzz-default-settings
