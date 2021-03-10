@@ -5,21 +5,21 @@
 # Youtube Channel: https://goo.gl/fvkdwm 
 #=================================================
 
-name: R2S Super Firmware 
+name: Build_NanoPi_R2S
 
 on: 
   release:
     types: [published]
 
   #push:
-    #branches: 
-      #- super
+  #  branches: 
+  #    - master
 
   #schedule:
   #  - cron: 0 8 * * 5
   
   #watch:
-    #types: [started]
+  #  types: [started]
 
 jobs:
   build:
@@ -58,49 +58,24 @@ jobs:
         sudo -E apt-get clean
     - name: Clone source code
       env: 
-        REPO_URL: https://github.com/Lienol/openwrt.git
-        REPO_BRANCH: 19.07
+        REPO_URL: https://github.com/coolsnowwolf/lede
+        REPO_BRANCH: master
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
         cd openwrt
-        sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default    
+        sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
+        
     - name: Update & Install feeds
       working-directory: ./openwrt
       run: |
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         ./scripts/feeds install -a
-        
     #- name: Import external feeds
     #  working-directory: ./openwrt
     #  run: |
     #    git clone https://github.com/xiaorouji/openwrt-passwall.git package/lienol
     #    git clone "your_github_link" package/"your_folder_name"      
- 
-    #- name: Delete Old Argon
-    #  working-directory: ./openwrt/package
-    #  run: |
-    #    rm -rf lean/luci-theme-argon
-        
-    #- name: Delete Old Argon
-    #  run: |
-    #    cd openwrt/package
-    #    rm -rf lean/luci-theme-argon
-    #    git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
-        
- 
-    - name: Import external feeds
-      working-directory: ./openwrt
-      run: |
-        git clone https://github.com/xiaorouji/openwrt-passwall.git package/lienol
-        git clone https://github.com/vernesong/OpenClash.git package/OpenClash
-        git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
-        git clone -b master https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
-        git clone https://github.com/jerrykuku/lua-maxminddb.git package/lua-maxminddb
-        git clone https://github.com/jerrykuku/luci-app-vssr.git package/luci-app-vssr
-        git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman
-        
-        
 
     - name: Configuration Customization - Build_NanoPi_R2S
       env:
