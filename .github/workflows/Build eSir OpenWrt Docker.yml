@@ -95,9 +95,9 @@ jobs:
         git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman
         git clone https://github.com/lisaac/luci-lib-docker.git package/luci-lib-docker
         
-    - name: Configuration Customization - R2S_eSir_Final.config
+    - name: Configuration Customization - R2S_eSir_docker.config
       env:
-        CONFIG_FILE: 'R2S_eSir_Final.config'
+        CONFIG_FILE: 'R2S_eSir_docker.config'
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x ./R2S_eSir_Final.sh && ./R2S_eSir_Final.sh
