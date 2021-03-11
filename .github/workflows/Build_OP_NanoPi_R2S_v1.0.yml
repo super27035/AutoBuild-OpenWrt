@@ -82,6 +82,8 @@ jobs:
         git clone -b 18.06 https://github.com/super27035/luci-theme-argon.git package/luci-theme-argon
         git clone https://github.com/super27035/lua-maxminddb.git package/lua-maxminddb  
         git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
+        git clone https://github.com/super27035/luci-app-vssr.git package/luci-app-vssr
+        git clone https://github.com/super27035/OpenClash.git package/OpenClash
         
         
     - name: Configuration Customization - Build_NanoPi_R2S_v1.0
