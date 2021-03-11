@@ -5,7 +5,7 @@
 # Youtube Channel: https://goo.gl/fvkdwm 
 #=================================================
 
-name: Build_NanoPi_R2S_v1.0
+name: Build_NanoPi_R2S_v2.0
 
 on:
   repository_dispatch:
