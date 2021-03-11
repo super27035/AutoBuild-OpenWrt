@@ -59,6 +59,11 @@ jobs:
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
         cd openwrt
         sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
+        
+    - name: Delete Old Argon
+      working-directory: ./openwrt/package
+      run: |
+        rm -rf lean/luci-theme-argon 
 
     - name: Update & Install feeds
       working-directory: ./openwrt
@@ -66,6 +71,21 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         ./scripts/feeds install -a
+        
+    - name: Import external feeds
+      working-directory: ./openwrt
+      run: |
+        git clone https://github.com/xiaorouji/openwrt-passwall.git package/lienol
+        git clone -b 18.06 https://github.com/super27035/luci-theme-argon.git package/luci-theme-argon
+        git clone https://github.com/super27035/lua-maxminddb.git package/lua-maxminddb  
+        git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
+    #    git clone https://github.com/super27035/luci-app-vssr.git package/luci-app-vssr
+    #    git clone https://github.com/super27035/OpenClash.git package/OpenClash
+    #    git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman
+    #    git clone https://github.com/lisaac/luci-lib-docker.git package/luci-lib-docker
+        
+        
+        
     - name: Configuration Customization - Build_Newifi_D1
       env:
         CONFIG_FILE: 'Newifi_D1.config'
