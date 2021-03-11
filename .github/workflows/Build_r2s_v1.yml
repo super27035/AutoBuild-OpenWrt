@@ -5,7 +5,7 @@
 # Youtube Channel: https://goo.gl/fvkdwm 
 #=================================================
 
-name: Build eSir OpenWrt Final
+name: Build_NanoPi_R2S
 
 on:
   repository_dispatch:
@@ -53,53 +53,31 @@ jobs:
         sudo -E apt-get clean
     - name: Clone source code
       env: 
-        REPO_URL: https://github.com/super27035/ledenew.git
-        REPO_BRANCH: super
+        REPO_URL: https://github.com/coolsnowwolf/lede
+        REPO_BRANCH: master
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
         cd openwrt
-        sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default    
+        sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
+        
     - name: Update & Install feeds
       working-directory: ./openwrt
       run: |
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         ./scripts/feeds install -a
-        
     #- name: Import external feeds
     #  working-directory: ./openwrt
     #  run: |
     #    git clone https://github.com/xiaorouji/openwrt-passwall.git package/lienol
     #    git clone "your_github_link" package/"your_folder_name"      
- 
-    - name: Delete Old Argon
-      working-directory: ./openwrt/package
-      run: |
-        rm -rf lean/luci-theme-argon
-        
-    #- name: Delete Old Argon
-    #  run: |
-    #    cd openwrt/package
-    #    rm -rf lean/luci-theme-argon
-    #    git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
-        
- 
-    - name: Import external feeds
-      working-directory: ./openwrt
-      run: |
-        git clone https://github.com/super27035/openwrt-passwall.git package/lienol
-        git clone https://github.com/super27035/OpenClash.git package/OpenClash
-        git clone -b 18.06 https://github.com/super27035/luci-theme-argon.git package/luci-theme-argon
-        git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
-        git clone https://github.com/super27035/lua-maxminddb.git package/lua-maxminddb
-        git clone https://github.com/super27035/luci-app-vssr.git package/luci-app-vssr 
 
-    - name: Configuration Customization - R2S_eSir_Final.config
+    - name: Configuration Customization - Build_NanoPi_R2S
       env:
-        CONFIG_FILE: 'R2S_eSir_Final.config'
+        CONFIG_FILE: 'NanoPi_R2S.config'
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-        chmod +x ./R2S_eSir_Final.sh && ./R2S_eSir_Final.sh
+        chmod +x ./customize.sh && ./customize.sh
         cd openwrt && make defconfig
         
     - name: Download package
