@@ -88,9 +88,9 @@ jobs:
         git clone https://github.com/lisaac/luci-lib-docker.git package/luci-lib-docker
         
         
-    - name: Configuration Customization - Build_NanoPi_R2S_v1.0
+    - name: Configuration Customization - Build_NanoPi_R2S_v2.0
       env:
-        CONFIG_FILE: 'NanoPi_R2S_v1.0.config'
+        CONFIG_FILE: 'NanoPi_R2S_v2.0.config'
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x ./customize.sh && ./customize.sh
