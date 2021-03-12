@@ -82,9 +82,9 @@ jobs:
         
         
         
-    - name: Configuration Customization - Build_Newifi_D1
+    - name: Configuration Customization - Build_Newifi_D1_2
       env:
-        CONFIG_FILE: 'Newifi_D1.config'
+        CONFIG_FILE: 'Newifi_D1_2.config'
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x ./customize.sh && ./customize.sh
