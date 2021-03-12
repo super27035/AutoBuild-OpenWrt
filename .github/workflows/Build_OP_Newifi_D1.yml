@@ -76,15 +76,11 @@ jobs:
       working-directory: ./openwrt
       run: |
         git clone https://github.com/xiaorouji/openwrt-passwall.git package/lienol
-        git clone -b 18.06 https://github.com/super27035/luci-theme-argon.git package/luci-theme-argon
-        git clone https://github.com/super27035/lua-maxminddb.git package/lua-maxminddb  
-        git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
         
         
-        
-    - name: Configuration Customization - Build_Newifi_D1_2
+    - name: Configuration Customization - Build_Newifi_D1
       env:
-        CONFIG_FILE: 'Newifi_D1_2.config'
+        CONFIG_FILE: 'Newifi_D1.config'
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x ./customize.sh && ./customize.sh
