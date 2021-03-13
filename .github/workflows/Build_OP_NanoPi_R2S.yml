@@ -60,6 +60,11 @@ jobs:
         cd openwrt
         sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
         
+    - name: Delete Old Argon
+      working-directory: ./openwrt/package
+      run: |
+        rm -rf lean/luci-theme-argon
+        
     - name: Update & Install feeds
       working-directory: ./openwrt
       run: |
@@ -70,7 +75,20 @@ jobs:
     #  working-directory: ./openwrt
     #  run: |
     #    git clone https://github.com/xiaorouji/openwrt-passwall.git package/lienol
-    #    git clone "your_github_link" package/"your_folder_name"      
+    #    git clone "your_github_link" package/"your_folder_name"  
+    
+    - name: Import external feeds
+      working-directory: ./openwrt
+      run: |
+        git clone https://github.com/xiaorouji/openwrt-passwall.git package/lienol
+        git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
+        git clone https://github.com/jerrykuku/lua-maxminddb.git package/lua-maxminddb  
+        git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
+        git clone https://github.com/jerrykuku/luci-app-vssr.git package/luci-app-vssr
+        git clone https://github.com/vernesong/OpenClash.git package/OpenClash
+        git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman
+        git clone https://github.com/lisaac/luci-lib-docker.git package/luci-lib-docker
+    
 
     - name: Configuration Customization - Build_NanoPi_R2S
       env:
