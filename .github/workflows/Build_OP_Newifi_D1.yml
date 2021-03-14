@@ -70,7 +70,7 @@ jobs:
     - name: Import external feeds
       working-directory: ./openwrt
       run: |
-        git clone https://github.com/xiaorouji/openwrt-passwall.git package/lienol
+        git clone https://github.com/jerrykuku/luci-app-vssr.git package/luci-app-vssr
         
         
     - name: Configuration Customization - Build_Newifi_D1
