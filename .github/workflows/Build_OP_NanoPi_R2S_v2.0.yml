@@ -65,6 +65,11 @@ jobs:
       run: |
         rm -rf lean/luci-theme-argon
         
+    - name: Copy files
+      working-directory: ./openwrt
+      run: |     
+        cp -rf ./PATCH/R2S/files 
+        
         
     - name: Update & Install feeds
       working-directory: ./openwrt
