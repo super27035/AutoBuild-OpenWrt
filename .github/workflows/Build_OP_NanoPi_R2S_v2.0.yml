@@ -63,12 +63,7 @@ jobs:
     - name: Delete Old Argon
       working-directory: ./openwrt/package
       run: |
-        rm -rf lean/luci-theme-argon
-        
-    - name: Copy files
-      run: |     
-        cp -rf ./PATCH/R2S/files ./openwrt
-        
+        rm -rf lean/luci-theme-argon    
         
     - name: Update & Install feeds
       working-directory: ./openwrt
