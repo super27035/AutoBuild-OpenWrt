@@ -71,9 +71,7 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         ./scripts/feeds install -a
-        
-        
-        
+           
     - name: Import external feeds
       working-directory: ./openwrt
       run: |
@@ -95,6 +93,10 @@ jobs:
         chmod +x ./customize.sh && ./customize.sh
         cd openwrt && make defconfig
         
+    - name: Copy FILES
+      run: |     
+        cp -rf ../PATCH/R2S/files ./openwrt
+        
     - name: Download package
       working-directory: ./openwrt
       run: |
@@ -102,10 +104,6 @@ jobs:
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
         
-    - name: Copy FILES
-      working-directory: ./openwrt
-      run: |     
-        cp -rf ./PATCH/R2S/files ./files
         
     - name: Build firmware
       working-directory: ./openwrt
