@@ -19,4 +19,4 @@ sed -i 's/OpenWrt/SUPERouter/g' openwrt/package/base-files/files/bin/config_gene
 #4. Change the default language back to auto
 sed -i 's/zh_cn/auto/g' openwrt/package/lean/default-settings/files/zzz-default-settings
 
-cp -rf ./PATCH/R2S/files ./files
+## cp -rf ./PATCH/R2S/files ./files
