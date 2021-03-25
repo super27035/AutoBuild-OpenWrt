@@ -101,6 +101,12 @@ jobs:
         make download -j$(nproc)
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
+        
+    - name: Copy FILES
+      working-directory: ./openwrt
+      run: |     
+        cp -rf ./PATCH/R2S/files ./files
+        
     - name: Build firmware
       working-directory: ./openwrt
       run: |
