@@ -120,6 +120,6 @@ jobs:
     - name: Upload Artifact 2
       uses: actions/upload-artifact@master
       with:
-        name: R2S-$(date +%Y-%m-%d)
+        name: "R2S-$(date +%Y-%m-%d)"
         path: openwrt/bin
       
