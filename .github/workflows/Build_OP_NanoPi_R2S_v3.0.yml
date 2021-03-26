@@ -122,16 +122,4 @@ jobs:
       with:
         name: R2S-$(date +%Y-%m-%d)
         path: openwrt/bin
-      id: create_release
-      uses: actions/create-release@main
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        tag_name: ${{ steps.assemble_artifact.outputs.release_tag }}
-        release_name: SUPER ${{ steps.assemble_artifact.outputs.release_tag }}
-        draft: false
-        prerelease: false
-
-        
-        
-        
+      
