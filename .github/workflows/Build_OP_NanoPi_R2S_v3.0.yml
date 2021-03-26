@@ -89,9 +89,9 @@ jobs:
         cd openwrt
         cp -rf ../PATCH/R2S/files ./files
                 
-    - name: Configuration Customization - Build_NanoPi_R2S_v2.0
+    - name: Configuration Customization - Build_NanoPi_R2S_v3.0
       env:
-        CONFIG_FILE: 'NanoPi_R2S_v2.0.config'
+        CONFIG_FILE: 'NanoPi_R2S_v3.0.config'
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x ./customize.sh && ./customize.sh
