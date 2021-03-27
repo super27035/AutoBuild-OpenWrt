@@ -7,18 +7,14 @@
 
 name: Build_NanoPi_R2S_files_v3.0
 
-#on:
-#  repository_dispatch:
-#  workflow_dispatch:
-#    inputs:
-#      ssh:
-#        description: 'SSH connection to Actions'
-#        required: false
-#        default: 'false'
-
-on: 
-  release:
-    types: [published]
+on:
+  repository_dispatch:
+  workflow_dispatch:
+    inputs:
+      ssh:
+        description: 'SSH connection to Actions'
+        required: false
+        default: 'false'
 
   schedule:
     - cron: 20 9 * * 6
