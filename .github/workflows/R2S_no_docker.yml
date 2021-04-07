@@ -15,7 +15,10 @@ on:
         description: 'SSH connection to Actions'
         required: false
         default: 'false'
-
+  push:
+    branches: 
+      - NoDocker
+  
   schedule:
     - cron: 20 9 * * 6
 
