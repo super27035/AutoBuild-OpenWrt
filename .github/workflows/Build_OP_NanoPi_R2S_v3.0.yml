@@ -5,7 +5,7 @@
 # Youtube Channel: https://goo.gl/fvkdwm 
 #=================================================
 
-name: Build_NanoPi_R2S_No_docker
+name: Build_OP_NanoPi_R2S_v3.0
 
 on:
   repository_dispatch:
