@@ -5,7 +5,7 @@
 # Youtube Channel: https://goo.gl/fvkdwm 
 #=================================================
 
-name: R2S_no_docker
+name: R2S_No_Docker
 
 on:
   repository_dispatch:
