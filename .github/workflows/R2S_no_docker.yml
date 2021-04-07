@@ -15,9 +15,9 @@ on:
         description: 'SSH connection to Actions'
         required: false
         default: 'false'
-  push:
-    branches: 
-      - NoDocker
+  #push:
+    #branches: 
+      #- NoDocker
   
   schedule:
     - cron: 20 9 * * 6
@@ -146,7 +146,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         tag_name: ${{ steps.assemble_artifact.outputs.release_tag }}
-        release_name: SUPER ${{ steps.assemble_artifact.outputs.release_tag }}
+        release_name: SUPER NoDocker ${{ steps.assemble_artifact.outputs.release_tag }}
         draft: false
         prerelease: false
 
