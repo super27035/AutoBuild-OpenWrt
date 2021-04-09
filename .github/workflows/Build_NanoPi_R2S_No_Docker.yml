@@ -5,7 +5,7 @@
 # Youtube Channel: https://goo.gl/fvkdwm 
 #=================================================
 
-name: Build_NanoPi_R2S
+name: Build_NanoPi_R2S_No_Docker
 
 on:
   repository_dispatch:
@@ -23,8 +23,8 @@ on:
   #  branches: 
   #    - NoDocker
   
-  schedule:
-    - cron: 20 9 * * 6
+  watch:
+    types: [started]
 
 jobs:
   build:
