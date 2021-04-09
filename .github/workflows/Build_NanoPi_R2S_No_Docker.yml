@@ -14,8 +14,9 @@ on:
   schedule:
     - cron: 20 9 * * 6
   
-  watch:
-    types: [started]
+  push:
+    branches: 
+      - NoDocker
 
 jobs:
   build:
