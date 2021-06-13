@@ -16,8 +16,8 @@ on:
         required: false
         default: 'false'
 
-  schedule:
-    - cron: 20 9 * * 6
+#schedule:
+#    - cron: 20 9 * * 6
 
 jobs:
   build:
