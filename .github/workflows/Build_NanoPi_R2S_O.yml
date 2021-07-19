@@ -11,8 +11,8 @@ on:
   repository_dispatch:
   workflow_dispatch:
 
-  schedule:
-    - cron: 20 9 * * 6
+  #schedule:
+  #  - cron: 20 9 * * 6
   
   push:
     branches: 
